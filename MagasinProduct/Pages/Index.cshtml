@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Tidningar</h1>
+    <p>Topplistan</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        @foreach (var product in Model.Products)
+        {
+
+            <div class="col-md-3 col-sm-6">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a href="#">
+                            <img class="" src="@product.Image">
+                        </a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title">@product.Name</h3>
+                        <div class="price small">
+                            @product.FromPrice
+                        </div>
+                        <div class="">
+                            <a class="btn btn-cart btn-cta" href="./Magasin/Index">Läs mer här</a>
+                        </div>
+                        <div class="">
+                            <a class="add-to-cart" href="">+ Lägg till</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
